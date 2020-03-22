@@ -33,7 +33,17 @@ public class NoteDaoImpl implements NoteDao{
 			e.printStackTrace();
 		}
 	}
-	
+
+	public Note updateNote(Note note) {
+		try {
+			Session session = this.sessionFactory.getCurrentSession();
+			session.update(note);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return note;
+	}
+
 	public List<Note> getNotes(){
 		List<Note> list = null;
 		try {
@@ -53,5 +63,11 @@ public class NoteDaoImpl implements NoteDao{
 			e.printStackTrace();
 		}
 		return list;
+	}
+
+	@Override
+	public Note getNote(Integer noteId) {
+		Session session = this.sessionFactory.getCurrentSession();
+		return session.get(Note.class, noteId);
 	}
 }

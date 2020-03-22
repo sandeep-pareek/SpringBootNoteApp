@@ -2,15 +2,15 @@ package com.sandeep.SpringBootDemo.dto;
 
 public class NoteDto {
 
-	private Integer id;
+	private int id;
 	private String description;
 	private String header;
 	private String status;
 
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getDescription() {

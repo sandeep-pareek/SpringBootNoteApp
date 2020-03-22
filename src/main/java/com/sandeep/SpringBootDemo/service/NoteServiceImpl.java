@@ -31,6 +31,21 @@ public class NoteServiceImpl implements NoteService {
 	}
 
 	@Transactional
+	public NoteDto updateNote(NoteDto note) {
+		Note n = noteDao.getNote(note.getId());
+		n.setDescription(note.getDescription());
+		n.setHeader(note.getHeader());
+		n.setStatus(note.getStatus());
+		return modelMapper.map(noteDao.updateNote(n), NoteDto.class);
+	}
+
+	@Transactional
+	public NoteDto getNote(int noteId) {
+		Note note = noteDao.getNote(noteId);
+		return modelMapper.map(note, NoteDto.class);
+	}
+
+	@Transactional
 	public List<NoteDto> getNotes(){
 		return modelMapper.map(noteDao.getNotes(), List.class);
 	}

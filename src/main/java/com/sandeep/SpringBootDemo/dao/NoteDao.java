@@ -14,4 +14,7 @@ public interface NoteDao {
 	
 	public List<Note> getNotes();
 
+	public Note updateNote(Note note);
+
+	public Note getNote(Integer noteId);
 }
