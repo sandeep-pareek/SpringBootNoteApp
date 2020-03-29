@@ -1,10 +1,21 @@
 package com.sandeep.SpringBootDemo.dto;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+/**
+ * 
+ * @author sandeep
+ * @since 29th March, 2020
+ */
 public class NoteDto {
 
 	private int id;
+	private String title;
 	private String description;
-	private String header;
+	private String tags;
+	private Date lastUpdatedDate;
 	private String status;
 
 	public int getId() {
@@ -23,19 +34,35 @@ public class NoteDto {
 		this.description = description;
 	}
 
-	public String getHeader() {
-		return header;
-	}
-
-	public void setHeader(String header) {
-		this.header = header;
-	}
-
 	public String getStatus() {
 		return status;
 	}
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public Date getLastUpdatedDate() {
+		return lastUpdatedDate;
+	}
+
+	public void setLastUpdatedDate(Date lastUpdatedDate) {
+		this.lastUpdatedDate = lastUpdatedDate;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getTags() {
+		return tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
 	}
 }

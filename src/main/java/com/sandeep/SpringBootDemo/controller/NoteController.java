@@ -18,7 +18,9 @@ import com.sandeep.SpringBootDemo.service.NoteService;
 
 /***
  * @author sandeep
- * @since 22 March 2020
+ * @since 22 March, 2020
+ * @updated 29 March, 2020
+ * 
  */
 
 @Controller
@@ -28,12 +30,6 @@ public class NoteController {
 
 	@Autowired
 	private NoteService noteService;
-
-	@GetMapping("/home")
-	@ResponseBody
-	public String homepage() {
-		return "homes";
-	}
 
 	@PostMapping("/")
 	@ResponseBody

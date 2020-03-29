@@ -34,8 +34,9 @@ public class NoteServiceImpl implements NoteService {
 	public NoteDto updateNote(NoteDto note) {
 		Note n = noteDao.getNote(note.getId());
 		n.setDescription(note.getDescription());
-		n.setHeader(note.getHeader());
+		n.setTitle(note.getTitle());
 		n.setStatus(note.getStatus());
+		n.setLastUpdatedDate(note.getLastUpdatedDate());
 		return modelMapper.map(noteDao.updateNote(n), NoteDto.class);
 	}
 

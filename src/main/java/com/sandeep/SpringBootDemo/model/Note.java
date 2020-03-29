@@ -1,7 +1,12 @@
 package com.sandeep.SpringBootDemo.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,9 +27,12 @@ public class Note implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-
+	private String title;
 	private String description;
-	private String header;
+	private String tags;
+
+	@Column(name="last_updated_date")
+	private Date lastUpdatedDate;
 	private String status;
 
 	public String getStatus() {
@@ -33,6 +41,22 @@ public class Note implements Serializable {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getTags() {
+		return tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
 	}
 
 	public Integer getId() {
@@ -51,16 +75,16 @@ public class Note implements Serializable {
 		this.description = description;
 	}
 
-	public String getHeader() {
-		return header;
-	}
-
-	public void setHeader(String header) {
-		this.header = header;
-	}
-
 	@Override
 	public String toString() {
-		return "id: " + id.toString() + "descrition: " + description.toString() + "header: " + header.toString();
+		return "id: " + id.toString() + "title: " + title.toString() + "descrition: " + description.toString();
+	}
+
+	public Date getLastUpdatedDate() {
+		return lastUpdatedDate;
+	}
+
+	public void setLastUpdatedDate(Date lastUpdatedDate) {
+		this.lastUpdatedDate = lastUpdatedDate;
 	}
 }
