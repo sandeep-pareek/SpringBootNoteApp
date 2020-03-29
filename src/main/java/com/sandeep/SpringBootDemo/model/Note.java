@@ -14,61 +14,53 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="T_NOTE")
-public class Note implements Serializable{
+@Table(name = "T_NOTE")
+public class Note implements Serializable {
 
 	private static final long serialVersionUID = -9196483832589749249L;
 
-@Id
-@GeneratedValue(strategy=GenerationType.AUTO)
-private Integer id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
 
-private String description;
-private String header;
-private String status;
+	private String description;
+	private String header;
+	private String status;
 
-public String getStatus() {
-	return status;
-}
+	public String getStatus() {
+		return status;
+	}
 
-public void setStatus(String status) {
-	this.status = status;
-}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
-public Integer getId() {
-	return id;
-}
+	public Integer getId() {
+		return id;
+	}
 
-public void setId(Integer id) {
-	this.id = id;
-}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
+	public String getDescription() {
+		return description;
+	}
 
-public String getDescription() {
-	return description;
-}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
+	public String getHeader() {
+		return header;
+	}
 
-public void setDescription(String description) {
-	this.description = description;
-}
+	public void setHeader(String header) {
+		this.header = header;
+	}
 
-
-public String getHeader() {
-	return header;
-}
-
-
-public void setHeader(String header) {
-	this.header = header;
-}
-
-
-
-@Override
+	@Override
 	public String toString() {
-		return "id: "+ id.toString() + 
-				"descrition: " +description.toString() 
-				+"header: " + header.toString();
+		return "id: " + id.toString() + "descrition: " + description.toString() + "header: " + header.toString();
 	}
 }

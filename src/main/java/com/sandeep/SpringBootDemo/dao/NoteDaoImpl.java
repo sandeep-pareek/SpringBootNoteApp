@@ -20,7 +20,7 @@ import javax.persistence.criteria.Root;
  */
 
 @Repository
-public class NoteDaoImpl implements NoteDao{
+public class NoteDaoImpl implements NoteDao {
 
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -28,7 +28,7 @@ public class NoteDaoImpl implements NoteDao{
 	public void addNote(Note note) {
 		try {
 			Session session = this.sessionFactory.getCurrentSession();
-			session.persist(note);
+			session.save(note);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -38,13 +38,13 @@ public class NoteDaoImpl implements NoteDao{
 		try {
 			Session session = this.sessionFactory.getCurrentSession();
 			session.update(note);
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return note;
 	}
 
-	public List<Note> getNotes(){
+	public List<Note> getNotes() {
 		List<Note> list = null;
 		try {
 			Session session = this.sessionFactory.getCurrentSession();

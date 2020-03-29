@@ -21,9 +21,9 @@ public class NoteServiceImpl implements NoteService {
 
 	@Autowired
 	private NoteDao noteDao;
-	
+
 	@Autowired
-	private ModelMapper modelMapper; 
+	private ModelMapper modelMapper;
 
 	@Transactional
 	public void addNote(NoteDto note) {
@@ -46,7 +46,7 @@ public class NoteServiceImpl implements NoteService {
 	}
 
 	@Transactional
-	public List<NoteDto> getNotes(){
+	public List<NoteDto> getNotes() {
 		return modelMapper.map(noteDao.getNotes(), List.class);
 	}
 }

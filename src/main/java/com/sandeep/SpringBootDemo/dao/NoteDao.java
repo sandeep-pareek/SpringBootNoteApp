@@ -11,7 +11,7 @@ import com.sandeep.SpringBootDemo.model.Note;
 
 public interface NoteDao {
 	public void addNote(Note note);
-	
+
 	public List<Note> getNotes();
 
 	public Note updateNote(Note note);

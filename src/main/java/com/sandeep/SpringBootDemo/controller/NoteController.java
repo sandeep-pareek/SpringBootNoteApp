@@ -25,7 +25,7 @@ import com.sandeep.SpringBootDemo.service.NoteService;
 @RequestMapping("/note")
 @CrossOrigin(origins = "http://localhost:4200")
 public class NoteController {
-	
+
 	@Autowired
 	private NoteService noteService;
 
@@ -37,8 +37,8 @@ public class NoteController {
 
 	@PostMapping("/")
 	@ResponseBody
-	public String addNote(@RequestBody NoteDto note){
-		System.out.println("note: "+note.toString());
+	public String addNote(@RequestBody NoteDto note) {
+		System.out.println("note: " + note.toString());
 		noteService.addNote(note);
 		return "SUCCESS";
 	}
@@ -58,7 +58,7 @@ public class NoteController {
 
 	@GetMapping("/list")
 	@ResponseBody
-	public List<NoteDto> getNotes(){
+	public List<NoteDto> getNotes() {
 		System.out.println("Getting all notes");
 		return noteService.getNotes();
 	}
