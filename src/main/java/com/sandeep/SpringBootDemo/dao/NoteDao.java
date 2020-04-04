@@ -10,11 +10,13 @@ import com.sandeep.SpringBootDemo.model.Note;
  */
 
 public interface NoteDao {
-	public void addNote(Note note);
+	public void saveNote(Note note);
 
 	public List<Note> getNotes();
 
 	public Note updateNote(Note note);
 
 	public Note getNote(Integer noteId);
+
+	public void deleteNote(int noteId);
 }

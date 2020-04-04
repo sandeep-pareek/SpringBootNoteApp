@@ -26,8 +26,8 @@ public class NoteServiceImpl implements NoteService {
 	private ModelMapper modelMapper;
 
 	@Transactional
-	public void addNote(NoteDto note) {
-		noteDao.addNote(modelMapper.map(note, Note.class));
+	public void saveNote(NoteDto note) {
+		noteDao.saveNote(modelMapper.map(note, Note.class));
 	}
 
 	@Transactional
@@ -49,5 +49,11 @@ public class NoteServiceImpl implements NoteService {
 	@Transactional
 	public List<NoteDto> getNotes() {
 		return modelMapper.map(noteDao.getNotes(), List.class);
+	}
+
+	@Transactional
+	public void deleteNote(int noteId) {
+		noteDao.deleteNote(noteId);
+		
 	}
 }

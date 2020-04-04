@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,9 +34,9 @@ public class NoteController {
 
 	@PostMapping("/")
 	@ResponseBody
-	public String addNote(@RequestBody NoteDto note) {
+	public String saveNote(@RequestBody NoteDto note) {
 		System.out.println("note: " + note.toString());
-		noteService.addNote(note);
+		noteService.saveNote(note);
 		return "SUCCESS";
 	}
 
@@ -50,6 +51,13 @@ public class NoteController {
 	public NoteDto getNote(@PathVariable("noteId") int noteId) {
 		NoteDto note = noteService.getNote(noteId);
 		return note;
+	}
+
+	@DeleteMapping("/{noteId}")
+	@ResponseBody
+	public String deleteNote(@PathVariable("noteId") int noteId) {
+		noteService.deleteNote(noteId);
+		return "SUCCESS";
 	}
 
 	@GetMapping("/list")

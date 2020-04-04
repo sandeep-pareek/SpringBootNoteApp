@@ -25,7 +25,7 @@ public class NoteDaoImpl implements NoteDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	public void addNote(Note note) {
+	public void saveNote(Note note) {
 		try {
 			Session session = this.sessionFactory.getCurrentSession();
 			session.save(note);
@@ -69,5 +69,12 @@ public class NoteDaoImpl implements NoteDao {
 	public Note getNote(Integer noteId) {
 		Session session = this.sessionFactory.getCurrentSession();
 		return session.get(Note.class, noteId);
+	}
+
+	@Override
+	public void deleteNote(int noteId) {
+		Session session = this.sessionFactory.getCurrentSession();
+		session.delete(session.get(Note.class, noteId));
+		
 	}
 }
