@@ -29,6 +29,7 @@ public class NoteDaoImpl implements NoteDao {
 		try {
 			Session session = this.sessionFactory.getCurrentSession();
 			session.save(note);
+			System.out.println("test");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
