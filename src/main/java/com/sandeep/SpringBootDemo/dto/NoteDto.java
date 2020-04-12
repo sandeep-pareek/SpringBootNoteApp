@@ -6,23 +6,23 @@ import java.util.List;
 
 /**
  * 
- * @author sandeep
+ * @author Sandeep Pareek
  * @since 29th March, 2020
  */
 public class NoteDto {
 
-	private int id;
+	private Integer id;
 	private String title;
 	private String description;
-	private String tags;
+	private List<TagDto> tags = new ArrayList<TagDto>();
 	private Date lastUpdatedDate;
 	private String status;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -58,11 +58,11 @@ public class NoteDto {
 		this.title = title;
 	}
 
-	public String getTags() {
+	public List<TagDto> getTags() {
 		return tags;
 	}
 
-	public void setTags(String tags) {
+	public void setTags(List<TagDto> tags) {
 		this.tags = tags;
 	}
 }

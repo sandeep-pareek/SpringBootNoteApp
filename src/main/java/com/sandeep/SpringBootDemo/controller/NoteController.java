@@ -32,6 +32,13 @@ public class NoteController {
 	@Autowired
 	private NoteService noteService;
 
+	@GetMapping("/{noteId}")
+	@ResponseBody
+	public NoteDto getNote(@PathVariable("noteId") int noteId) {
+		NoteDto note = noteService.getNote(noteId);
+		return note;
+	}
+
 	@PostMapping("/")
 	@ResponseBody
 	public String saveNote(@RequestBody NoteDto note) {
@@ -44,13 +51,6 @@ public class NoteController {
 	@ResponseBody
 	public NoteDto updateNote(@RequestBody NoteDto note) {
 		return noteService.updateNote(note);
-	}
-
-	@GetMapping("/{noteId}")
-	@ResponseBody
-	public NoteDto getNote(@PathVariable("noteId") int noteId) {
-		NoteDto note = noteService.getNote(noteId);
-		return note;
 	}
 
 	@DeleteMapping("/{noteId}")

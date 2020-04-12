@@ -1,13 +1,19 @@
 package com.sandeep.SpringBootDemo.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -23,14 +29,33 @@ public class Note implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="ID")
 	private Integer id;
-	private String title;
-	private String description;
-	private String tags;
 
-	@Column(name="last_updated_date")
+	@Column(name="TITLE")
+	private String title;
+
+	@Column(name="DESCRIPTION")
+	private String description;
+
+	@Column(name = "LAST_UPDATED_DATE")
 	private Date lastUpdatedDate;
+
+	@Column(name="STATUS")
 	private String status;
+
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "T_NOTE_TAG", joinColumns = { @JoinColumn(name="NOTE_ID", referencedColumnName = "ID") }, inverseJoinColumns = {
+			@JoinColumn(name = "TAG_ID", referencedColumnName = "TAG_ID") })
+	private List<Tag> tags = new ArrayList<Tag>();
+
+	public List<Tag> getTags() {
+		return tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
 
 	public String getStatus() {
 		return status;
@@ -46,14 +71,6 @@ public class Note implements Serializable {
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
-
-	public String getTags() {
-		return tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
 	}
 
 	public Integer getId() {
