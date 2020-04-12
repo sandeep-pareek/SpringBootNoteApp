@@ -59,9 +59,11 @@ public class NoteServiceImpl implements NoteService {
 		Map<Integer, Tag> tagDtos = n.getTags().stream().collect(Collectors.toMap(Tag::getTagId, t-> t));
 		List<Tag> tagList = note.getTags()
 				.stream()
-				.filter(t -> tagDtos.get(t.getTagId()) != null)
 				.map(t -> {
-					Tag tag = tagDtos.get(t.getTagId());
+					Tag tag = tagDtos.getOrDefault(t.getTagId(), new Tag());
+					if(tag.getTagId() != null) {
+						tag.setTagId(t.getTagId());
+					}
 					tag.setTagName(t.getTagName());
 					return tag;
 				})
