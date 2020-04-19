@@ -5,6 +5,7 @@ package com.sandeep.SpringBootDemo.dto;
  * @author Sandeep Pareek
  * @since 9th April, 2020
  */
+
 public class TagDto {
 
 	private Integer tagId;
@@ -24,5 +25,10 @@ public class TagDto {
 
 	public void setTagName(String tagName) {
 		this.tagName = tagName;
+	}
+
+	@Override
+	public String toString() {
+		return this.getTagName();
 	}
 }
