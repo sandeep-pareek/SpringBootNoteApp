@@ -12,9 +12,9 @@
 	<groupId>com.sandeep</groupId>
 	<artifactId>SpringBootNoteApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>SpringBootNoteApp</name>
-	<description>Demo project for Spring Boot</description>
+	<description>A Spring Boot project to take notes</description>
 
 	<properties>
 		<java.version>1.8</java.version>

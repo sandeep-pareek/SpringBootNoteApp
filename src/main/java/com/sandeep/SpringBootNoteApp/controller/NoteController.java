@@ -1,4 +1,4 @@
-package com.sandeep.SpringBootDemo.controller;
+package com.sandeep.SpringBootNoteApp.controller;
 
 import java.util.List;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.sandeep.SpringBootDemo.dto.NoteDto;
-import com.sandeep.SpringBootDemo.service.NoteService;
+import com.sandeep.SpringBootNoteApp.dto.NoteDto;
+import com.sandeep.SpringBootNoteApp.service.NoteService;
 
 /***
  * @author sandeep

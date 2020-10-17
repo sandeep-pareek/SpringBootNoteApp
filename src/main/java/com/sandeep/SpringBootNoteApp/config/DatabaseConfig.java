@@ -1,4 +1,4 @@
-package com.sandeep.SpringBootDemo.config;
+package com.sandeep.SpringBootNoteApp.config;
 
 import java.util.Properties;
 
@@ -22,7 +22,7 @@ public class DatabaseConfig {
 	public LocalSessionFactoryBean sessionFactory() {
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(getDataSource());
-		sessionFactory.setPackagesToScan("com.sandeep.SpringBootDemo.model");
+		sessionFactory.setPackagesToScan("com.sandeep.SpringBootNoteApp.model");
 		sessionFactory.setHibernateProperties(hibernateProperties());
 		return sessionFactory;
 	}

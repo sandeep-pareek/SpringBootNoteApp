@@ -1,4 +1,4 @@
-package com.sandeep.SpringBootDemo.model;
+package com.sandeep.SpringBootNoteApp.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;

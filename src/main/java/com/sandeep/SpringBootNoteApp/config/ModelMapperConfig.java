@@ -1,4 +1,4 @@
-package com.sandeep.SpringBootDemo.config;
+package com.sandeep.SpringBootNoteApp.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

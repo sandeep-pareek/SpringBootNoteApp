@@ -1,8 +1,8 @@
-package com.sandeep.SpringBootDemo.dao;
+package com.sandeep.SpringBootNoteApp.dao;
 
 import java.util.List;
 
-import com.sandeep.SpringBootDemo.model.Note;
+import com.sandeep.SpringBootNoteApp.model.Note;
 
 /***
  * @author sandeep

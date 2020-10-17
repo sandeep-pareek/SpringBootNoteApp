@@ -1,8 +1,8 @@
-package com.sandeep.SpringBootDemo.service;
+package com.sandeep.SpringBootNoteApp.service;
 
 import java.util.List;
 
-import com.sandeep.SpringBootDemo.dto.NoteDto;
+import com.sandeep.SpringBootNoteApp.dto.NoteDto;
 
 /***
  * @author sandeep
@@ -11,7 +11,7 @@ import com.sandeep.SpringBootDemo.dto.NoteDto;
 
 public interface NoteService {
 
-	public void saveNote(NoteDto note);
+	public NoteDto saveNote(NoteDto note);
 
 	public NoteDto updateNote(NoteDto note);
 

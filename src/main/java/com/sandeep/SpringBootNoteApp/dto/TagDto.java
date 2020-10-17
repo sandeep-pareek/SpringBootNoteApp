@@ -1,4 +1,4 @@
-package com.sandeep.SpringBootDemo.dto;
+package com.sandeep.SpringBootNoteApp.dto;
 
 /**
  * 

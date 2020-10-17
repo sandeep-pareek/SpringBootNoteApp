@@ -1,4 +1,4 @@
-package com.sandeep.SpringBootDemo.service;
+package com.sandeep.SpringBootNoteApp.service;
 
 import java.util.List;
 import java.util.Map;
@@ -9,10 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sandeep.SpringBootDemo.dao.NoteDao;
-import com.sandeep.SpringBootDemo.dto.NoteDto;
-import com.sandeep.SpringBootDemo.model.Note;
-import com.sandeep.SpringBootDemo.model.Tag;
+import com.sandeep.SpringBootNoteApp.dao.NoteDao;
+import com.sandeep.SpringBootNoteApp.dto.NoteDto;
+import com.sandeep.SpringBootNoteApp.model.Note;
+import com.sandeep.SpringBootNoteApp.model.Tag;
 
 /***
  * @author Sandeep Pareek
@@ -42,13 +42,15 @@ public class NoteServiceImpl implements NoteService {
 	}
 
 	@Transactional
-	public void saveNote(NoteDto note) {
+	public NoteDto saveNote(NoteDto note) {
 		try {
 			Note n = modelMapper.map(note, Note.class);
 			noteDao.saveNote(n);
+			return note;
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		return null;
 	}
 
 	@Transactional

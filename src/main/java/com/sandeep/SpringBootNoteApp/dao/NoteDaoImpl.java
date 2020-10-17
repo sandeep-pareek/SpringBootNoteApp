@@ -1,4 +1,4 @@
-package com.sandeep.SpringBootDemo.dao;
+package com.sandeep.SpringBootNoteApp.dao;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.sandeep.SpringBootDemo.model.Note;
+import com.sandeep.SpringBootNoteApp.model.Note;
 
 /***
  * @author sandeep

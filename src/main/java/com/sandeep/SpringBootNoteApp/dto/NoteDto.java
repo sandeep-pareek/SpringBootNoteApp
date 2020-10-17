@@ -1,4 +1,4 @@
-package com.sandeep.SpringBootDemo.dto;
+package com.sandeep.SpringBootNoteApp.dto;
 
 import java.util.ArrayList;
 import java.util.Date;
