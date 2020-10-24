@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Data;
+
 /**
  * @author Sandeep Pareek
  * @since 9th April, 2020
@@ -16,6 +18,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "T_TAG")
+@Data
 public class Tag implements Serializable {
 
 	private static final long serialVersionUID = -2685158076345675196L;
@@ -28,20 +31,5 @@ public class Tag implements Serializable {
 	@Column(name="TAG_NAME")
 	private String tagName;
 
-	public Integer getTagId() {
-		return tagId;
-	}
-
-	public void setTagId(Integer tagId) {
-		this.tagId = tagId;
-	}
-
-	public String getTagName() {
-		return tagName;
-	}
-
-	public void setTagName(String tagName) {
-		this.tagName = tagName;
-	}
 
 }
