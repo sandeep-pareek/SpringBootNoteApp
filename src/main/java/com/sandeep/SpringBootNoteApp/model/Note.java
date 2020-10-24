@@ -16,6 +16,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.Data;
+
 /**
  * @author sandeep
  * @since 22nd March 2020
@@ -23,6 +25,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "T_NOTE")
+@Data
 public class Note implements Serializable {
 
 	private static final long serialVersionUID = -9196483832589749249L;
@@ -48,57 +51,4 @@ public class Note implements Serializable {
 	@JoinTable(name = "T_NOTE_TAG", joinColumns = { @JoinColumn(name="NOTE_ID", referencedColumnName = "ID") }, inverseJoinColumns = {
 			@JoinColumn(name = "TAG_ID", referencedColumnName = "TAG_ID") })
 	private List<Tag> tags = new ArrayList<Tag>();
-
-	public List<Tag> getTags() {
-		return tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	@Override
-	public String toString() {
-		return "id: " + id.toString() + "title: " + title.toString() + "descrition: " + description.toString();
-	}
-
-	public Date getLastUpdatedDate() {
-		return lastUpdatedDate;
-	}
-
-	public void setLastUpdatedDate(Date lastUpdatedDate) {
-		this.lastUpdatedDate = lastUpdatedDate;
-	}
 }
