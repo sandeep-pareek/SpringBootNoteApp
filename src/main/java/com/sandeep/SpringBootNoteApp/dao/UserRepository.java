@@ -1,11 +1,14 @@
 package com.sandeep.SpringBootNoteApp.dao;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
 
 import com.sandeep.SpringBootNoteApp.model.User;
 
-import java.util.Optional;
-
+/**
+ *
+ * @author sandeep
+ * @since 25th Oct 2020
+ */
 public interface UserRepository {
 	Optional<User> findByUsername(String username);
 }
