@@ -3,12 +3,14 @@ package com.sandeep.SpringBootNoteApp.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -19,7 +21,7 @@ import com.sandeep.SpringBootNoteApp.service.CustomUserDetailsService;
 /**
  *
  * @author sandeep
- * @since 25th Oct 2020
+ * @since 2nd Nov 2020
  */
 
 @EnableWebSecurity
@@ -34,11 +36,21 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService);
+		auth.authenticationProvider(authenticationProvider());
+	}
+
+	@Bean
+	public DaoAuthenticationProvider authenticationProvider() {
+		DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+		authenticationProvider.setUserDetailsService(userDetailsService);
+		authenticationProvider.setPasswordEncoder(encoder());
+		return authenticationProvider;
 	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests().antMatchers("/",
+		http.csrf().disable().authorizeRequests().antMatchers(
+				"/",
 				"/swagger-ui.html",
 				"/auth",
 				"/v2/api-docs",
@@ -55,13 +67,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //		.and()
 //		.formLogin();
 
-
 		http.addFilterBefore(jSONWebTokenFilter, UsernamePasswordAuthenticationFilter.class);
 	}
 
 	@Bean
-	public PasswordEncoder getPasswordEncoder() {
-		return NoOpPasswordEncoder.getInstance();
+	public PasswordEncoder encoder() {
+		return new BCryptPasswordEncoder();
 	}
 
 	@Bean(name = BeanIds.AUTHENTICATION_MANAGER)
