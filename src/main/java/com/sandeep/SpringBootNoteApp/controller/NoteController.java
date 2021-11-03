@@ -22,12 +22,12 @@ import io.swagger.annotations.Authorization;
 /***
  * @author sandeep
  * @since 22 March, 2020
- * @updated 25th Oct, 2020
+ * @updated 3rd Nov, 2021
  * 
  */
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:3000")
 public class NoteController {
 
 	@Autowired

@@ -4,10 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sandeep.SpringBootNoteApp.dto.TokenDto;
 import com.sandeep.SpringBootNoteApp.model.AuthenticationRequest;
 import com.sandeep.SpringBootNoteApp.service.JSONWebTokenService;
 
@@ -15,9 +17,11 @@ import com.sandeep.SpringBootNoteApp.service.JSONWebTokenService;
  *
  * @author sandeep
  * @since 25th Oct 2020
+ * @modified 3rd Nov 2021
  */
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class AuthenticationController {
 
 	@Autowired
@@ -27,7 +31,7 @@ public class AuthenticationController {
 	private AuthenticationManager authManager;
 
 	@PostMapping("/auth")
-	public String generateToken(@RequestBody AuthenticationRequest request) throws Exception {
+	public TokenDto generateToken(@RequestBody AuthenticationRequest request) throws Exception {
 		System.out.println("test");
 		try {
 			authManager.authenticate(
@@ -36,7 +40,8 @@ public class AuthenticationController {
 			throw new Exception("username or password is invalid");
 		}
 
-		return jSONWebTokenServices.generateToken(request.getUsername());
+		String token = jSONWebTokenServices.generateToken(request.getUsername());
+		return new TokenDto(token);
 	}
 
 }
