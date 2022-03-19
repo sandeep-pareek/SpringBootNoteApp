@@ -1,5 +1,7 @@
 package com.sandeep.SpringBootNoteApp.dao;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.hibernate.Session;
@@ -30,6 +32,12 @@ public class UserRepositoryImpl implements UserRepository {
 		query.setParameter("username", username);
 		User user = query.uniqueResult();
 		return Optional.of(user);
+	}
+	
+	@Override
+	public List<User> getAllUsers() {
+		
+		return new ArrayList();
 	}
 
 }

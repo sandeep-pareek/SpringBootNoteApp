@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sandeep.SpringBootNoteApp.dto.TokenDto;
+import com.sandeep.SpringBootNoteApp.dto.UserDto;
 import com.sandeep.SpringBootNoteApp.model.AuthenticationRequest;
 import com.sandeep.SpringBootNoteApp.service.JSONWebTokenService;
+import com.sandeep.SpringBootNoteApp.service.UserService;
 
 /**
  *
@@ -43,5 +45,4 @@ public class AuthenticationController {
 		String token = jSONWebTokenServices.generateToken(request.getUsername());
 		return new TokenDto(token);
 	}
-
 }
