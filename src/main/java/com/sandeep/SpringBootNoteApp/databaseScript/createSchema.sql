@@ -56,4 +56,6 @@ CREATE TABLE IF NOT EXISTS `T_USER` (
 	PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
+-- Default User `sandy` with BCrypt encoded password
+INSERT INTO `T_USER` (`active`, `password`, `username`, `role`)
+VALUES (1, "$2a$12$0SIyuv8hdhirl9aKiAa70OgYMnDxz3RJcRTkWZac.RQvYeqPEnrJC", "sandy", "ROLE_ADMIN");
