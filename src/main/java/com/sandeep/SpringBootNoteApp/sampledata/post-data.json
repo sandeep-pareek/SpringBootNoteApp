@@ -1,0 +1,20 @@
+// API 	"/note"
+
+{
+  "title":"note1-title",
+  "description":"note-description",
+  "tags":[
+    {
+      "tagName": "MyTagName"
+    }
+  ],
+  "lastUpdatedDate":"2022-04-22",
+  "status":"new"
+}
+
+// API "/auth"
+
+{
+  "username": "sandy",
+  "password": "sandy"
+}

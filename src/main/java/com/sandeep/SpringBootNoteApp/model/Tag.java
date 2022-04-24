@@ -24,7 +24,7 @@ public class Tag implements Serializable {
 	private static final long serialVersionUID = -2685158076345675196L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="TAG_ID")
 	private Integer tagId;
 

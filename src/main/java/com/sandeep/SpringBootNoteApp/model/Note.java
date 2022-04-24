@@ -31,7 +31,7 @@ public class Note implements Serializable {
 	private static final long serialVersionUID = -9196483832589749249L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID")
 	private Integer id;
 
