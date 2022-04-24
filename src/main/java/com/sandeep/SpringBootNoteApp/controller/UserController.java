@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sandeep.SpringBootNoteApp.dto.UserDto;
 import com.sandeep.SpringBootNoteApp.service.UserService;
 
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.Authorization;
+//import io.swagger.annotations.ApiOperation;
+//import io.swagger.annotations.Authorization;
 
 @RestController()
 public class UserController {
@@ -34,7 +34,7 @@ public class UserController {
 	}
 	
 	@GetMapping
-	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
+//	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
 	public List<UserDto> getAllUsers() {
 		return userService.getUsers();
 	}

@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sandeep.SpringBootNoteApp.dto.NoteDto;
 import com.sandeep.SpringBootNoteApp.service.NoteService;
 
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.Authorization;
+//import io.swagger.annotations.ApiOperation;
+//import io.swagger.annotations.Authorization;
 
 /***
  * @author sandeep
@@ -35,7 +35,7 @@ public class NoteController {
 
 	@GetMapping("/note/{noteId}")
 	@ResponseBody
-	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
+//	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
 	public NoteDto getNote(@PathVariable("noteId") int noteId) {
 		NoteDto note = noteService.getNote(noteId);
 		return note;
@@ -43,7 +43,7 @@ public class NoteController {
 
 	@PostMapping("/note")
 	@ResponseBody
-	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
+//	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
 	public String saveNote(@RequestBody NoteDto note) {
 		System.out.println("note: " + note.toString());
 		noteService.saveNote(note);
@@ -52,14 +52,14 @@ public class NoteController {
 
 	@PutMapping("/note")
 	@ResponseBody
-	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
+//	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
 	public NoteDto updateNote(@RequestBody NoteDto note) {
 		return noteService.updateNote(note);
 	}
 
 	@DeleteMapping("/admin/note/{noteId}")
 	@ResponseBody
-	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
+//	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
 	public String deleteNote(@PathVariable("noteId") int noteId) {
 		noteService.deleteNote(noteId);
 		return "SUCCESS";
@@ -67,7 +67,7 @@ public class NoteController {
 
 	@GetMapping("/note/list")
 	@ResponseBody
-	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
+//	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
 	public List<NoteDto> getNotes() {
 		System.out.println("Getting all notes");
 		return noteService.getNotes();

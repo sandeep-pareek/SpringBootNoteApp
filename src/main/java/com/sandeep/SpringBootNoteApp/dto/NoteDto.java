@@ -14,7 +14,7 @@ public class NoteDto {
 	private Integer id;
 	private String title;
 	private String description;
-	private List<TagDto> tags = new ArrayList<TagDto>();
+	private List<TagDto> tags = new ArrayList<>();
 	private Date lastUpdatedDate;
 	private String status;
 
