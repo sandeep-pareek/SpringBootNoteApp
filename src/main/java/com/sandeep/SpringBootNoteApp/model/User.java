@@ -1,6 +1,7 @@
 package com.sandeep.SpringBootNoteApp.model;
-import javax.persistence.*;
+//import javax.persistence.*;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
