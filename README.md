@@ -14,7 +14,7 @@ Autodeployed at : https://sandeep-pareek.github.io/SpringBootNoteApp/
 ![NoteApp](https://raw.githubusercontent.com/sandeep-pareek/SpringBootNoteApp/master/src/main/java/com/sandeep/SpringBootNoteApp/sampledata/get-notes.png)
 
 ### /Auth
-![Auth](https://github.com/sandeep-pareek/SpringBootNoteApp/master/src/main/java/com/sandeep/SpringBootNoteApp/sampledata/auth.png)
+![Auth](https://raw.githubusercontent.com/sandeep-pareek/SpringBootNoteApp/master/src/main/java/com/sandeep/SpringBootNoteApp/sampledata/auth.png)
 
 ### /Post Note
 ![Post Note](https://raw.githubusercontent.com/sandeep-pareek/SpringBootNoteApp/master/src/main/java/com/sandeep/SpringBootNoteApp/sampledata/post-notes.png)
