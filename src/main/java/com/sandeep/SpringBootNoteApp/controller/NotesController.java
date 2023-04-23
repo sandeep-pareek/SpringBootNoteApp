@@ -10,11 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sandeep.SpringBootNoteApp.dto.NoteDto;
-import com.sandeep.SpringBootNoteApp.service.NoteService;
+import com.sandeep.SpringBootNoteApp.service.NotesService;
 
 //import io.swagger.annotations.ApiOperation;
 //import io.swagger.annotations.Authorization;
@@ -28,15 +27,15 @@ import com.sandeep.SpringBootNoteApp.service.NoteService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
-public class NoteController {
+public class NotesController {
 
 	@Autowired
-	private NoteService noteService;
+	private NotesService notesService;
 
 	@GetMapping("/note/{noteId}")
 //	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
 	public NoteDto getNote(@PathVariable("noteId") int noteId) {
-		NoteDto note = noteService.getNote(noteId);
+		NoteDto note = notesService.getNote(noteId);
 		return note;
 	}
 
@@ -44,20 +43,20 @@ public class NoteController {
 //	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
 	public String saveNote(@RequestBody NoteDto note) {
 		System.out.println("note: " + note.toString());
-		noteService.saveNote(note);
+		notesService.saveNote(note);
 		return "SUCCESS";
 	}
 
 	@PutMapping("/note")
 //	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
 	public NoteDto updateNote(@RequestBody NoteDto note) {
-		return noteService.updateNote(note);
+		return notesService.updateNote(note);
 	}
 
 	@DeleteMapping("/admin/note/{noteId}")
 //	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
 	public String deleteNote(@PathVariable("noteId") int noteId) {
-		noteService.deleteNote(noteId);
+		notesService.deleteNote(noteId);
 		return "SUCCESS";
 	}
 
@@ -65,6 +64,6 @@ public class NoteController {
 //	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
 	public List<NoteDto> getNotes() {
 		System.out.println("Getting all notes");
-		return noteService.getNotes();
+		return notesService.getNotes();
 	}
 }

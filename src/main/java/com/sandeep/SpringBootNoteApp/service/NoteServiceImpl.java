@@ -21,7 +21,7 @@ import com.sandeep.SpringBootNoteApp.model.Tag;
  */
 
 @Service
-public class NoteServiceImpl implements NoteService {
+public class NoteServiceImpl implements NotesService {
 
 	@Autowired
 	private NoteDao noteDao;
@@ -80,7 +80,7 @@ public class NoteServiceImpl implements NoteService {
 	public List<NoteDto> getNotes() {
 		return noteDao
 				.getNotes()
-				.parallelStream()
+				.stream()
 				.map(n -> modelMapper.map(n, NoteDto.class))
 				.collect(Collectors.toList());
 	}
