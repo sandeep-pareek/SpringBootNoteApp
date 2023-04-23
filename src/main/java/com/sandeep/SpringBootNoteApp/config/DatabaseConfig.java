@@ -18,7 +18,7 @@ import com.zaxxer.hikari.HikariDataSource;
 @Configuration
 public class DatabaseConfig {
 
-	@Bean
+	@Bean(name="entityManagerFactory")
 	public LocalSessionFactoryBean sessionFactory() {
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(getDataSource());
@@ -45,4 +45,5 @@ public class DatabaseConfig {
 		properties.put("hibernate.format_sql", "false");
 		return properties;
 	}
+
 }
