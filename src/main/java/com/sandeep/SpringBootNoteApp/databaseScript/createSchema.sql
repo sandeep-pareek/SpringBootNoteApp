@@ -42,7 +42,7 @@ CREATE TABLE `T_NOTE_TAG` (
 ALTER TABLE T_NOTE
 Change `header` `title` varchar(1000) NOT NULL;
 
--- Altering the existing table, but without breaking orginal table
+-- Altering the existing table, but without breaking original table
 ALTER TABLE T_NOTE
 ADD COLUMN `last_updated_date` timestamp AFTER `status`;
 
@@ -56,6 +56,6 @@ CREATE TABLE IF NOT EXISTS `T_USER` (
 	PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Default User `sandy` with BCrypt encoded password
+-- Default User `sandy` with BCrypt encoded password `sandy`
 INSERT INTO `T_USER` (`active`, `password`, `username`, `role`)
 VALUES (1, "$2a$12$0SIyuv8hdhirl9aKiAa70OgYMnDxz3RJcRTkWZac.RQvYeqPEnrJC", "sandy", "ROLE_ADMIN");
