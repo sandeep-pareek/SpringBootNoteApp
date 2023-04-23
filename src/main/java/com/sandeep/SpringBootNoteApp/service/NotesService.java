@@ -9,7 +9,7 @@ import com.sandeep.SpringBootNoteApp.dto.NoteDto;
  * @since 22 March 2020
  */
 
-public interface NoteService {
+public interface NotesService {
 
 	public NoteDto saveNote(NoteDto note);
 
