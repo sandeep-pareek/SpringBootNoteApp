@@ -6,7 +6,7 @@ import lombok.Setter;
 /**
  * 
  * @author Sandeep Pareek
- * @since 9th April, 2020
+ * @since 9th April 2020
  */
 
 @Getter

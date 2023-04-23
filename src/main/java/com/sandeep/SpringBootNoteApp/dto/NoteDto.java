@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * 
  * @author Sandeep Pareek
- * @since 29th March, 2020
+ * @since 29th March 2020
  */
 public class NoteDto {
 
