@@ -61,8 +61,7 @@ public class JSONWebTokenFilter extends OncePerRequestFilter {
 
 			filterChain.doFilter(httpServletRequest, httpServletResponse);
 		} catch (Exception e) {
-			System.out.println("### Exception: " + e.getMessage());
-			e.printStackTrace();
+			throw new RuntimeException("Exception in JWT token parsing: ", e);
 		}
 	}
 }

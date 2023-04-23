@@ -11,13 +11,13 @@ Autodeployed at : https://sandeep-pareek.github.io/SpringBootNoteApp/
 
 ## Sample screenshot
 ### /GetNotes
-![NoteApp](https://github.com/sandeep-pareek/SpringBootNoteApp/blob/master/src/main/java/com/sandeep/SpringBootNoteApp/sampledata/get-notes.png)
+![NoteApp](https://raw.githubusercontent.com/sandeep-pareek/SpringBootNoteApp/master/src/main/java/com/sandeep/SpringBootNoteApp/sampledata/get-notes.png)
 
 ### /Auth
-![Auth](https://github.com/sandeep-pareek/SpringBootNoteApp/blob/master/src/main/java/com/sandeep/SpringBootNoteApp/sampledata/auth.png)
+![Auth](https://raw.githubusercontent.com/sandeep-pareek/SpringBootNoteApp/master/src/main/java/com/sandeep/SpringBootNoteApp/sampledata/auth.png)
 
 ### /Post Note
-![Post Note](https://github.com/sandeep-pareek/SpringBootNoteApp/blob/master/src/main/java/com/sandeep/SpringBootNoteApp/sampledata/post-notes.png)
+![Post Note](https://raw.githubusercontent.com/sandeep-pareek/SpringBootNoteApp/master/src/main/java/com/sandeep/SpringBootNoteApp/sampledata/post-notes.png)
 
 ## Afer merging of Spring security and JWT token branch, below are affects:
 
