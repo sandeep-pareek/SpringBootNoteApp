@@ -17,7 +17,7 @@
 	<description>A Spring Boot project to take notes</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>19</java.version>
 	</properties>
 
 	<dependencies>
