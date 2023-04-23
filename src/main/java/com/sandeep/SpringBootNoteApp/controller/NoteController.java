@@ -34,7 +34,6 @@ public class NoteController {
 	private NoteService noteService;
 
 	@GetMapping("/note/{noteId}")
-	@ResponseBody
 //	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
 	public NoteDto getNote(@PathVariable("noteId") int noteId) {
 		NoteDto note = noteService.getNote(noteId);
@@ -42,7 +41,6 @@ public class NoteController {
 	}
 
 	@PostMapping("/note")
-	@ResponseBody
 //	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
 	public String saveNote(@RequestBody NoteDto note) {
 		System.out.println("note: " + note.toString());
@@ -51,14 +49,12 @@ public class NoteController {
 	}
 
 	@PutMapping("/note")
-	@ResponseBody
 //	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
 	public NoteDto updateNote(@RequestBody NoteDto note) {
 		return noteService.updateNote(note);
 	}
 
 	@DeleteMapping("/admin/note/{noteId}")
-	@ResponseBody
 //	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
 	public String deleteNote(@PathVariable("noteId") int noteId) {
 		noteService.deleteNote(noteId);
@@ -66,7 +62,6 @@ public class NoteController {
 	}
 
 	@GetMapping("/note/list")
-	@ResponseBody
 //	@ApiOperation(value = "", authorizations = { @Authorization("jwtToken") })
 	public List<NoteDto> getNotes() {
 		System.out.println("Getting all notes");

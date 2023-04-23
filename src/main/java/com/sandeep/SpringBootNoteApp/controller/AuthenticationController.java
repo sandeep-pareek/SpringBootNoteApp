@@ -17,7 +17,7 @@ import com.sandeep.SpringBootNoteApp.service.UserService;
 
 /**
  *
- * @author sandeep
+ * @author Sandeep
  * @since 25th Oct 2020
  * @modified 3rd Nov 2021
  */

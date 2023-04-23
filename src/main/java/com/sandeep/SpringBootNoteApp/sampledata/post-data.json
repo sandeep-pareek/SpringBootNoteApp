@@ -2,14 +2,27 @@
 
 {
   "title":"note1-title",
-  "description":"note-description",
+  "description":"note1-description",
   "tags":[
     {
       "tagName": "MyTagName"
     }
   ],
-  "lastUpdatedDate":"2022-04-22",
+  "lastUpdatedDate":"2023-04-22",
   "status":"new"
+}
+{
+  "id": 2,
+  "title": "note2-title",
+  "description": "note2-description",
+  "tags": [
+    {
+      "tagId": 2,
+      "tagName": "MyTagName"
+    }
+  ],
+  "lastUpdatedDate": "2023-04-22",
+  "status": "new"
 }
 
 // API "/auth"
